@@ -14,7 +14,7 @@ export default class GroupPurchaseCell extends Component {
                 <View style={styles.rightContainer}>
                     <Heading1>{info.title}</Heading1>
                     <Paragraph numberOfLines={0} style={{ marginTop: 8 }}>{info.subtitle}</Paragraph>
-                    <View style={{ flex: 1, justifyContent: 'flex-end' }}>
+                    <View style={{ flex: 1, justifyContent: 'flex-end'}}>
                         <Heading1 style={styles.price}>{info.price}元</Heading1>
                     </View>
 
