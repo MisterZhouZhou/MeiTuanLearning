@@ -14,7 +14,7 @@ export default class GroupPurchaseScene extends Component {
       right: (<NavigationItem
                 icon={require('../../img/Public/icon_navigationItem_share@2x.png')}
                 onPress={() => {
-
+                  alert('分享');
                 }}
              />),
     }),
