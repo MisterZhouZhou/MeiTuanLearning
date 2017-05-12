@@ -1,11 +1,31 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity, ListView, Image, StatusBar } from 'react-native';
+import ScrollableTabView, { DefaultTabBar } from 'react-native-scrollable-tab-view';
+
+
+import { screen } from '../../common'
+import { color, } from '../../widget'
+import {Paragraph } from '../../widget/Text'
+import NearbyListScene from './NearbyListScene'
 
 export default class NearbyScene extends Component {
   static navigationOptions = {
         title: '附近',
-        headerStyle: { backgroundColor: 'white' },
+        header:(navigation) => ({
+          style: { backgroundColor: 'white' },
+          right:(
+               <TouchableOpacity style={styles.searchBar}>
+                <Image source={require('../../img/Home/search_icon.png')} style={styles.searchIcon} />
+                 <Paragraph>找附近的吃喝玩乐</Paragraph>
+                </TouchableOpacity>),
+          left: (
+            <TouchableOpacity style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center', padding: 10 }}>
+                <Image style={{ width: 13, height: 16 }} source={require('../../img/Public/icon_food_merchant_address@2x.png')} />
+                <Text style={{ fontSize: 15, color: '#333333' }}> 福州 鼓楼</Text>
+            </TouchableOpacity>
+        )
 
+        }),
         tabBar: {
           label: '附近',
           icon: ({ focused, tintColor }) => {
@@ -15,8 +35,64 @@ export default class NearbyScene extends Component {
         }
   }
   render(){
+    let titles = ['享美食', '住酒店', '爱玩乐', '全部']
+    let types = [
+        ['热门', '面包甜点', '小吃快餐', '川菜', '日本料理', '韩国料理', '台湾菜', '东北菜'],
+        ['热门', '商务出行', '公寓民宿', '情侣专享', '高星特惠', '成人情趣'],
+        ['热门', 'KTV', '足疗按摩', '洗浴汗蒸', '大宝剑', '电影院', '美发', '美甲'],
+        []
+    ]
+
+    let storyListViews = titles.map(
+        (title, i) => (
+            <NearbyListScene
+                tabLabel={titles[i]}
+                key={i}
+                types={types[i]}
+                navigation={this.props.navigation} />
+        )
+    )
     return(
-      <Text>OrderScene</Text>
+      <ScrollableTabView
+                style={styles.container}
+                tabBarBackgroundColor='white'
+                tabBarActiveTextColor='#FE566D'
+                tabBarInactiveTextColor='#555555'
+                tabBarTextStyle={styles.tabBarText}
+                tabBarUnderlineStyle={styles.tabBarUnderline}
+            >
+                {storyListViews}
+            </ScrollableTabView>
     );
   }
 }
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: color.background
+    },
+    searchBar: {
+        width: screen.width * 0.65,
+        height: 30,
+        borderRadius: 19,
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#eeeeee',
+        alignSelf: 'flex-end',
+        marginRight: 20,
+    },
+    searchIcon: {
+        width: 20,
+        height: 20,
+        margin: 5,
+    },
+    tabBarText: {
+        fontSize: 14,
+        marginTop: 13,
+    },
+    tabBarUnderline: {
+        backgroundColor: '#FE566D'
+    },
+});

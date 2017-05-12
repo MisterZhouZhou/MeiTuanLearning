@@ -7,6 +7,8 @@ import Button from './Button'
 import Separator from './Separator'
 import SpacingView from './SpacingView'
 import PageControl from './PageControl'
+import DetailCell from './DetailCell'
+
 
 
 export {
@@ -17,5 +19,6 @@ export {
     Separator,
     SpacingView,
     Button,
-    PageControl
+    PageControl,
+    DetailCell
 }

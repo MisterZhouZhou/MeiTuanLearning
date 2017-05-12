@@ -137,15 +137,15 @@ export default class HomeScene extends Component {
 
   renderHeader() {
     return (
-        <View style={{flex:1}}>
-            <HomeMenuView menuInfos={this.loadMenuInfos()} onMenuSelected={(index) => this.onMenuSelected(index)} />
-            <SpacingView />
-            <HomeGridView infos={this.state.discounts} onGridSelected={(index) => this.onGridSelected(index)} />
-            <SpacingView />
-            <View style={styles.recommendHeader}>
-                    <Heading2>猜你喜欢</Heading2>
-                </View>
-        </View>
+      <View style={{flex:1}}>
+        <HomeMenuView menuInfos={this.loadMenuInfos()} onMenuSelected={(index) => this.onMenuSelected(index)} />
+        <SpacingView />
+        <HomeGridView infos={this.state.discounts} onGridSelected={(index) => this.onGridSelected(index)} />
+        <SpacingView />
+        <View style={styles.recommendHeader}>
+                <Heading2>猜你喜欢</Heading2>
+            </View>
+      </View>
     )
   }
 
