@@ -6,10 +6,11 @@
 
 2、node_modules/react/lib
  
-	添加ReactComponentWithPureRenderMixin.js、shallowCompare.js、traverseAllChildren.js(记不清了，根据报错看吧)
+	添加ReactComponentWithPureRenderMixin.js、shallowCompare.js
 	
-<img src="https://github.com/MisterZhouZhou/MeiTuanLearning/tree/master/screenshot/iOS_0.png" width=250px heith=400px/>
 	
-<img src="https://github.com/MisterZhouZhou/MeiTuanLearning/tree/master/screenshot/iOS_1.png" width=250px heith=400px/>
+<img src="https://github.com/MisterZhouZhou/MeiTuanLearning/blob/master/screenshot/iOS_0.png" width=250px heith=400px/>
+	
+<img src="https://github.com/MisterZhouZhou/MeiTuanLearning/blob/master/screenshot/iOS_1.png" width=250px heith=400px/>
 
-<img src="https://github.com/MisterZhouZhou/MeiTuanLearning/tree/master/screenshot/iOS_2.png" width=250px heith=400px/>
+<img src="https://github.com/MisterZhouZhou/MeiTuanLearning/blob/master/screenshot/iOS_2.png" width=250px heith=400px/>
